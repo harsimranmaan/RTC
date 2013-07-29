@@ -1,0 +1,19 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "description: "Remember the cow",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.4",
+    "jade": "*",
+    "less-middleware": "*",
+    "coffee-script": "1.6.3" 
+  },
+  "engines": {
+    "node": "0.10.15",
+    "npm": "1.3.5"
+  }
+}
