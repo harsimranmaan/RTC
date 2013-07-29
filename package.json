@@ -2,7 +2,11 @@
   "name": "application-name",
   "version": "0.0.1",
   "private": true,
-  "description: "Remember the cow",
+"repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/harsimranmaan/RTC.git"
+  },
+  "description": "Remember the cow",
   "scripts": {
     "start": "node app.js"
   },
