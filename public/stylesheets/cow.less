@@ -17,17 +17,28 @@ body {
     font-family: @fontFamily;
     color: @fontColor;
 }
+img {
 
+border:none;
+}
 header, footer {
     padding: 0.5em;
     color: @barTextColor;
     background-color: @barBackColor;
+    
 }
 
-    header img {
-        margin-right: 1em;
-        float: left;
-    }
+footer {
+    position:absolute;
+    right:0;
+    left:0; 
+    bottom: 0;
+}
+
+header img {
+    margin-right: 1em;
+    float: left;
+}
 
 h1 {
     margin-top: 0;
