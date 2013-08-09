@@ -1,0 +1,10 @@
+{
+	"users":
+		[
+			{"user": "maan","password":"maan"},
+			{"user": "maanhs","password":"maanhs"},
+			{"user": "testuser","password":"testpass"},
+			{"user": "hsmaan","password":"hsmaan"},
+			{"user": "hsm","password":"hsm"}
+		]
+}

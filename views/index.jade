@@ -5,15 +5,17 @@ block content
 		p The best way to manage your tasks
 		p Never forget the cow (or anything else) again
 		p Login now to manage your to-do list	
-		form(name=userDetails)
+		form#frmLogin(name=userDetails)
 			fieldset 
 				legend Login
-				label(for="userDetails.name") Username
-				input(name="userDetails.name",placeholder="username",required)
-				label(for="userDetails.password") Password
-				input(name="userDetails.password",placeholder="password",required)
+				label Username
+				input#username(name="userDetails.name",placeholder="username",required)
+				label Password
+				input#password(name="userDetails.password",placeholder="password",required, type="password")
 				br
-				button#btnLogin(type="button") Login
+				button#btnLogin Login
+				br
+				span.hide.error Invalid username/password
 	div.tasks(class=(username)?"":"hide")
 		h1 
 			span.name= username
@@ -21,7 +23,7 @@ block content
 		if list.length > 0
 			ul
 				for item in list
-					li=item
+					li=item.item
 			span.nothing.hide
 				| Nothing in your list
 		else	
@@ -30,4 +32,6 @@ block content
 				| Nothing in your list
 		br
 		input#toDo(placeHolder="to do", required)
-		button#btnAdd Add
+		button#btnAdd(type="button") Add
+		br
+		button#btnLogout(type="button") Logout

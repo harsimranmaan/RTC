@@ -14,6 +14,7 @@
     "express": "3.3.4",
     "jade": "*",
     "less-middleware": "*",
+	"underscore": "1.5.1",
     "coffee-script": "1.6.3" 
   },
   "engines": {

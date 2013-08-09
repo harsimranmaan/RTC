@@ -7,6 +7,8 @@ routes = require './routes'
 user = require './routes/user'
 http = require 'http'
 path = require 'path' 
+userDb = require './users.json'
+_ = require 'underscore'
 
 app = express()
 
@@ -34,8 +36,8 @@ app.use express.errorHandler() if 'development' == app.get('env')
 app.get '/', routes.index 
 app.get '/user/:name', user.list
 app.post '/login', user.login
-app.get '/login', user.login
-#app.post '/logout', user.logout
+app.post '/logout', user.logout
+
 ### Start the server###
 http.createServer(app).listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get 'port'
