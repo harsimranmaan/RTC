@@ -17,28 +17,29 @@ body {
     font-family: @fontFamily;
     color: @fontColor;
 }
-img {
 
-border:none;
+img {
+    border: none;
 }
+
+.wrapper {
+    width: 80%;
+    border: 0.2em @barBackColor solid;
+    margin: 1em auto;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
 header, footer {
     padding: 0.5em;
     color: @barTextColor;
     background-color: @barBackColor;
-    
 }
 
-footer {
-    position:absolute;
-    right:0;
-    left:0; 
-    bottom: 0;
-}
-
-header img {
-    margin-right: 1em;
-    float: left;
-}
+    header img {
+        margin-right: 1em;
+        float: left;
+    }
 
 h1 {
     margin-top: 0;
@@ -56,4 +57,26 @@ footer section {
 
 .main {
     padding: 2em;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+    color: @fontColor;
+    border-radius: 0.4em;
+    padding: 0.1em 0.4em;
+    margin-bottom: 0.5em;
+    margin-right: 0.2em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+.hide {
+display:none;
 }

@@ -32,7 +32,10 @@ app.use express.errorHandler() if 'development' == app.get('env')
 
 
 app.get '/', routes.index 
-app.get '/users', user.list
+app.get '/user/:name', user.list
+app.post '/login', user.login
+app.get '/login', user.login
+#app.post '/logout', user.logout
 ### Start the server###
 http.createServer(app).listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get 'port'

@@ -2,4 +2,5 @@
 ### main route ###
 
 exports.index = (req, res) -> 
-  res.render 'index', { title: 'Remember the cow' }
+    details={ title: 'Remember the cow',username:"maan",list:["asd","asd"]}
+    res.render 'index', details
