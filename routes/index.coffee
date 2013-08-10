@@ -12,4 +12,5 @@ exports.index = (req, res) ->
     else
         list=[]
     details={ title: 'Remember the cow',username:name,list:list}
+    ### Render the index view ###
     res.render 'index', details
