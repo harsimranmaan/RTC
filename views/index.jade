@@ -23,7 +23,10 @@ block content
 		if list.length > 0
 			ul
 				for item in list
-					li=item.item
+					li
+						span.icon.delete
+						span.icon.done(class=(item.done == "1")?"disabled":"")
+						span.item(class=(item.done == "1")?"disabled":"")= item.item
 			span.nothing.hide
 				| Nothing in your list
 		else	

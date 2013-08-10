@@ -34,9 +34,9 @@ app.use express.errorHandler() if 'development' == app.get('env')
 
 
 app.get '/', routes.index 
-app.get '/user/:name', user.list
 app.post '/login', user.login
 app.post '/logout', user.logout
+app.post '/update', user.update
 
 ### Start the server###
 http.createServer(app).listen app.get('port'), ->
