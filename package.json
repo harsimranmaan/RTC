@@ -1,17 +1,12 @@
 {
-  "name": "Remember the cow",
+  "name": "application-name",
   "version": "0.0.1",
   "private": true,
-  "repository" :  {
-	"type" : "git",
-    "url" : "https://github.com/harsimranmaan/RTC.git"
+"repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/harsimranmaan/RTC.git"
   },
-  "author":
-  {
-	"name": "Harsimran Singh Maan",
-	"url": "http://thecow.herokuapp.com/"
-  },
-  "description": "Remember the cow - The to-do list",
+  "description": "Remember the cow",
   "scripts": {
     "start": "node app.js"
   },
