@@ -162,7 +162,7 @@ $(->
    
     ### Make the list sortable ###
     $("ul").sortable({
-         update: listUpdated
+         update: listUpdated,axis: "y"
         }
     )
     ###Populate if list is sent from server ###
