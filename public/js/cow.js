@@ -100,7 +100,7 @@
   /* Adds new row to the dom*/
 
 
-  appendRow = function(val) {
+  appendRow = function(val, done) {
     /*Create elements on the fly*/
 
     var $deleteIcon, $doneIcon, $holder, $li;
@@ -110,12 +110,18 @@
     $deleteIcon.addClass('icon delete');
     $doneIcon = $("<span></span>");
     $doneIcon.addClass('icon done');
+    if (done === 1) {
+      $doneIcon.addClass('disabled');
+    }
     /* Bind events*/
 
     $deleteIcon.click(removeItem);
     $doneIcon.click(itemDone);
     $holder = $("<span></span>");
     $holder.addClass('item');
+    if (done === 1) {
+      $holder.addClass('disabled');
+    }
     $holder.text(val);
     $li.append($deleteIcon).append($doneIcon).append($holder);
     /* animate the show*/
@@ -134,7 +140,7 @@
         /* Check if still logged In*/
 
         if (user.isLoggedIn()) {
-          appendRow(val);
+          appendRow(val, "0");
           return $(".nothing").addClass('hide');
         } else {
           return logout();
@@ -195,7 +201,7 @@
       $(".nothing").addClass('hide');
     }
     $.each(user.list, function(index, value) {
-      return appendRow(value.item);
+      return appendRow(value.item, value.done);
     });
     return $(".login").effect('drop', {}, 500, function() {
       $(".tasks").effect('slide', {

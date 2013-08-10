@@ -58,7 +58,7 @@ user =
         .fail ->
             alert "An error occured while trying to update the list. Please retry after refresh."
 ### Adds new row to the dom ###            
-appendRow= (val)->
+appendRow= (val,done)->
     ###Create elements on the fly###
     $li= $ "<li></li>"
     $li.addClass 'hide'
@@ -66,12 +66,14 @@ appendRow= (val)->
     $deleteIcon.addClass 'icon delete'
     $doneIcon =$("<span></span>")
     $doneIcon.addClass 'icon done'
+    $doneIcon.addClass 'disabled' if done is 1
     ### Bind events ###
 
     $deleteIcon.click removeItem
     $doneIcon.click itemDone
     $holder=$("<span></span>")
     $holder.addClass 'item'
+    $holder.addClass 'disabled' if done is 1
     $holder.text val
     $li.append($deleteIcon)
     .append($doneIcon)
@@ -86,7 +88,7 @@ addItem = ->
         user.updateList val, (data)->
             ### Check if still logged In ###
             if user.isLoggedIn()
-                appendRow val
+                appendRow val, "0"
                 $(".nothing").addClass 'hide'
             else
                 logout()
@@ -121,7 +123,7 @@ loginSuccess= ->
     $(".name").text user.name
     $(".nothing").addClass 'hide' if user.list.length
     $.each(user.list, (index, value) ->
-        appendRow value.item
+        appendRow value.item, value.done
     )
     $(".login").effect( 'drop', {}, 500, ->
         $(".tasks").effect 'slide', {direction:'right'}, 500
