@@ -10,7 +10,7 @@
   {
 	"name": "Harsimran Singh Maan",
 	"url": "http://thecow.herokuapp.com/"
-  }
+  },
   "description": "Remember the cow - The to-do list",
   "scripts": {
     "start": "node app.js"
