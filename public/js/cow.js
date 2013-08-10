@@ -132,7 +132,7 @@
   /* Handles add button click*/
 
 
-  addItem = function() {
+  addItem = function(event) {
     var val;
     val = $("#toDo").val().trim();
     if (val) {
@@ -155,7 +155,7 @@
   /* Logout the user*/
 
 
-  logout = function() {
+  logout = function(event) {
     user.logout();
     $(".error").addClass("hide");
     /* THe page transition effect*/
@@ -185,7 +185,7 @@
   /* Handle the login button click*/
 
 
-  login = function() {
+  login = function(event) {
     user.login($("#username").val(), $("#password").val(), loginSuccess, loginFailure);
     event.preventDefault();
     return false;

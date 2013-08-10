@@ -82,7 +82,7 @@ appendRow= (val,done)->
     $li.appendTo($("ul"))
     .show 'slow'
 ### Handles add button click ###
-addItem = ->
+addItem = (event)->
     val=$("#toDo").val().trim()
     if(val)
         user.updateList val, (data)->
@@ -96,7 +96,7 @@ addItem = ->
     event.preventDefault()
     return false
 ### Logout the user ###
-logout= ->
+logout= (event)->
     user.logout();
     $(".error").addClass "hide"
     ### THe page transition effect ###
@@ -113,7 +113,7 @@ listUpdated= ->
     user.updateList null, ->
         logout() if not user.isLoggedIn()
 ### Handle the login button click ###
-login= ->
+login= (event)->
     user.login $("#username").val(), $("#password").val(), loginSuccess, loginFailure
     event.preventDefault()
     return false
